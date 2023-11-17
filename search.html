@@ -1,0 +1,372 @@
+<html>
+<title>Result|Resulti</title>
+
+<head>
+  <meta name="theme-color" content="#0033cc">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styleslol.css">
+  <link rel="shortcut icon" type="image/jpg" href="assets/icon.png" />
+  <meta property="og:image" content="assets/logo.png" />
+  <meta property="og:title" content="Resulti-Here is a search for you!" />
+  <meta property="og:description" content="Resulti is a awesome canadian search engine. Search with safety. " />
+  <meta property="og:image:width" content="1000" />
+  <meta property="og:image:height" content="730" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styleslol.css" />
+  <style>
+    #results {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .result-item {
+      padding: 10px;
+      background-color: #374151;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<script src="bangs.js"></script>
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" style="float: center; background-color: #7baaf7;" type="button"
+    data-bs-toggle="dropdown" aria-expanded="false">
+    ///
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="./download.html">Download the app</a></li>
+    <li><a class="dropdown-item" href="./addsearchtoyourwebsite.html">Add Search Box to your website</a></li>
+    <li><a class="dropdown-item" href="./donate.html">Make a donate for Resulti</a></li>
+    <li><a class="dropdown-item" href="./privacypolicy.html">Privacy Policy </a></li>
+    <li><a class="dropdown-item" href="./about.html">About Resulti</a></li>
+  </ul>
+</div>
+<style>
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+    margin-top: 35px;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 1000;
+    display: none;
+    float: right;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: right;
+    list-style: none;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  }
+
+  .dropdown-menu.show {
+    display: block;
+  }
+
+
+  a {
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  p {
+    color: #eeeeee;
+  }
+
+  #results {
+    margin-top: 6px;
+    padding-left: 73px;
+    margin-right: 50px;
+  }
+
+  @media only screen and (max-width: 975px) {
+    #result {
+      margin-top: 16px;
+      padding-left: 0px;
+
+
+
+    }
+  }
+
+  #search-form {
+    display: none;
+  }
+
+  #buttonsearch {
+    padding-left: 7px;
+  }
+</style>
+
+
+
+
+
+<a href="https://resulti.net/">
+  <img class="center" id="my-img" src="assets/icon.png" width="70" height="70" alt="https://resulti.net/"
+    title="Goooooooooooooooooo!" style="float:left;margin:20px 10px;" />
+</a>
+<br>
+<br>
+<br>
+<br>
+<center>
+  <form id="standard" method="get" action="/search.html">
+    <div class="input-group">
+      <input type="text" class="form-control" name="q" maxlength="150" id="search-bar"
+        placeholder="Search the web with Resulti...">
+      <button class="btn btn-info" type="submit" id="button-addon2">Go!</button>
+      <div class="btn-group">
+        <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          🔽
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#" id="image-search">Image (DDG)</a></li>
+          <li><a class="dropdown-item" href="#" id="news-search">News (Mojeek)</a></li>
+        </ul>
+      </div>
+    </div>
+  </form>
+</center>
+
+<form id="search-form" id="standard">
+  <div class="input-group">
+    <input type="text" id="query" class="form-control" id="search-bar" maxlength="150"
+      placeholder="Enter your search query">
+    <button class="btn btn-info" type="submit" id="submit" id="button-addon2">Search</button>
+
+
+  </div>
+</form>
+
+<br>
+<br>
+<br>
+<hr style="color:white">
+<br>
+<div id="results" class="max-w-prose">
+  <script>
+    const form = document.getElementById('search-form');
+    const queryInput = document.getElementById('query');
+    const resultsDiv = document.getElementById('results');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const query = queryInput.value.trim();
+      const apiUrl = `https://resultiimagebackend.jacobi090.repl.co/search?q=${encodeURIComponent(query)}`;
+
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        displayResults(data);
+        boldText(query);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        results.innerHTML = '<p>An error occurred while fetching results.</p>';
+      }
+    });
+
+    function displayResults(data) {
+      resultsDiv.innerHTML = '';
+
+      if (data && data.results && data.results.length > 0) {
+        data.results.forEach((result) => {
+          const resultDiv = document.createElement('div');
+          resultDiv.classList.add('results');
+          resultDiv.innerHTML = `
+                  <img src="${result.thumbnail.src}" alt="${result.title}" style="max-width: 100%;">
+                  <p style="margin-bottom: 0; margin-top: 4px;"><a href="${result.url}" target="_blank" style="color: #8ab4f8;">${result.title}</a></p>
+              `;
+          resultsDiv.appendChild(resultDiv);
+        });
+      } else {
+        resultsDiv.innerHTML = '<p>No results found.</p>';
+      }
+    }
+
+    function boldText(queryString) {
+      let links = document.querySelectorAll("#results .result-item p a");
+
+      function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      }
+
+      links.forEach(function (link) {
+        let linkText = link.textContent;
+
+        queryString.split(" ").forEach(function (keyword) {
+          let regex = new RegExp("\\b" + escapeRegExp(keyword) + "\\b", "gi");
+
+          linkText = linkText.replace(regex, function (match) {
+            return "<strong>" + match + "</strong>";
+          });
+        });
+
+        link.innerHTML = linkText;
+      });
+    }
+
+    function getUrlParameter(sParam) {
+      var sPageURL = window.location.search.substring(1);
+      var sURLVariables = sPageURL.split('&');
+      for (var i = 0; i < sURLVariables.length; i++) {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) {
+          return sParameterName[1];
+        }
+      }
+    }
+
+    if (getUrlParameter('q') !== undefined && getUrlParameter('q') !== '') {
+      document.title = 'Pepsearch Images - ' + getUrlParameter('q');
+      document.getElementById('query').value = getUrlParameter('q');
+      document.getElementById('submit').click();
+    }
+
+    document.getElementById('submit').addEventListener('click', function () {
+      window.history.pushState("", "Image Search", `/?q=${document.getElementById('query').value}`);
+    });
+  </script>
+</div>
+<a href="//www.dmca.com/Protection/Status.aspx?id=d0017b07-d117-4bb9-a005-a30c9e4a9abd"
+  title="DMCA.com Protection Status" class="dmca-badge"> <img
+    src="//images.dmca.com/Badges/dmca-badge-w100-5x1-10.png?ID=//www.dmca.com/Protection/Status.aspx?id=d0017b07-d117-4bb9-a005-a30c9e4a9abd"
+    alt="DMCA.com Protection Status"></a>
+<script src="//images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+<p style="color:white">We, Resulti and ClaytonTDM (the owner of the code and member of the Forjed Team), have accepted
+  that THE CODE FOR RESULTS can be used in Resulti.</p>
+// Credit to ClaytonTDM for the API
+
+
+<style>
+  #standard {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: -60 auto;
+  }
+
+  #animated-2 {
+    width: 80%;
+  }
+
+  input[type="submit"] {
+    width: 18%;
+  }
+</style>
+
+
+<style>
+  @import url('https://fonts.cdnfonts.com/css/lato?styles=17382');
+</style>
+<div class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<style>
+  @media only screen and (max-width: 975px) {
+    form#standard {
+      text-align: center;
+
+
+
+    }
+  }
+
+  input[type="submit"] {
+    width: -20%;
+  }
+</style>
+
+
+
+
+
+<style>
+  body::-webkit-scrollbar,
+  body scrollbar {
+    width: 0.2em;
+    background-color: #003399;
+  }
+
+  body::-webkit-scrollbar-thumb,
+  body scrollbar thumb {
+    background-color: #b3b3b3;
+  }
+</style>
+
+
+<style>
+  @media only screen and (max-width: 767px) {
+    #animated-2 {
+      display: flex;
+      justify-content: center;
+    }
+  }
+</style>
+
+<style>
+  #standard {
+    margin-left: 70px;
+  }
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+<br>
+<br>
+<br>
+<br>
+<center>
+  <form id="standard" method="get" action="/search.html">
+    <div class="input-group">
+      <input type="text" class="form-control" name="q" maxlength="150" id="search-bar"
+        placeholder="Search the web with Resulti...">
+      <button class="btn btn-info" type="submit" id="button-addon2">Go!</button>
+    </div>
+  </form>
+</center>
+
+<html>
