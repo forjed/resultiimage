@@ -204,6 +204,23 @@
 <br>
 <hr style="color:white">
 <br>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var resultsContainer = document.getElementById('results');
+    var textElement = resultsContainer.querySelector('p');
+    var originalText = textElement.textContent;
+    var wordsToDisplay = 10; // Définissez le nombre de mots à afficher
+
+    // Séparez le texte en mots
+    var words = originalText.split(' ');
+
+    // Limitez le nombre de mots
+    var truncatedText = words.slice(0, wordsToDisplay).join(' ');
+
+    // Mettez à jour le texte dans l'élément
+    textElement.textContent = truncatedText;
+  });
+</script>
 <div id="results" class="max-w-prose">
   <script>
     const form = document.getElementById('search-form');
