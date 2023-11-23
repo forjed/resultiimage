@@ -1,138 +1,106 @@
 <html>
 <title>Result|Resulti</title>
-
-<head>
+  <head>
   <meta name="theme-color" content="#0033cc">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styleslol.css">
-  <link rel="shortcut icon" type="image/jpg" href="assets/icon.png" />
-  <meta property="og:image" content="assets/logo.png" />
-  <meta property="og:title" content="Resulti-Here is a search for you!" />
-  <meta property="og:description" content="Resulti is a awesome canadian search engine. Search with safety. " />
-  <meta property="og:image:width" content="1000" />
-  <meta property="og:image:height" content="730" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="styleslol.css" />
-  <style>
-    #results {
-      margin-top: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleslol.css">
+    <link rel="shortcut icon" type="image/jpg" href="assets/icon.png"/>
+ <meta property="og:image" content="assets/logo.png"/>
+<meta property="og:title" content="Resulti-Here is a search for you!"/>
+<meta property="og:description" content="Resulti is a awesome canadian search engine. Search with safety. "/>
+<meta property="og:image:width" content="1000"/>
+<meta property="og:image:height" content="730"/> 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="styleslol.css" />
+  </head>
 
-    .result-item {
-      padding: 10px;
-      background-color: #374151;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-    }
-
-    a {
-      color: #3498db;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-
+<script src="https://resulti.statuspage.io/embed/script.js"></script>
 <script src="bangs.js"></script>
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" style="float: center; background-color: #7baaf7;" type="button"
-    data-bs-toggle="dropdown" aria-expanded="false">
-    ///
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="https://resulti.net/download.html">Download the app</a></li>
-    <li><a class="dropdown-item" href="https://resulti.net/addsearchtoyourwebsite.html">Add Search Box to your website</a></li>
-    <li><a class="dropdown-item" href="https://resulti.net/donate.html">Make a donate for Resulti</a></li>
-    <li><a class="dropdown-item" href="https://resulti.net/privacypolicy.html">Privacy Policy </a></li>
-    <li><a class="dropdown-item" href="https://resulti.net/about.html">About Resulti</a></li>
-  </ul>
-</div>
+  <button class="btn btn-info" type="button" id="menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">///</button>
+
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>Thanks you for using Resulti</p>
+      
+    </div>
+  </div>
 <style>
   .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+  margin-top: 35px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 1000;
+  display: none;
+  float: right;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 14px;
+  text-align: right;
+  list-style: none;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+#menu{
     float: right;
     margin-right: 20px;
     margin-top: 35px;
   }
 
-  .dropdown-menu {
-    position: absolute;
-    right: 0;
-    top: 100%;
-    z-index: 1000;
-    display: none;
-    float: right;
-    min-width: 160px;
-    padding: 5px 0;
-    margin: 2px 0 0;
-    font-size: 14px;
-    text-align: right;
-    list-style: none;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  }
-
-  .dropdown-menu.show {
-    display: block;
-  }
-
-
-  a {
-    font-size: 20px;
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  p {
-    color: #eeeeee;
-  }
-
-  #results {
-    margin-top: 6px;
-    padding-left: 73px;
-    margin-right: 50px;
-  }
-
+}
+        a {
+            font-size: 20px;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p {
+            color: #eeeeee;
+        }
+        #results {
+            margin-top: 6px;
+      padding-left: 73px;
+      margin-right: 50px;
+        }
   @media only screen and (max-width: 975px) {
-    #result {
-      margin-top: 16px;
-      padding-left: 0px;
+  #result {
+     margin-top: 16px;
+     padding-left: 0px;
 
 
 
-    }
   }
-
-  #search-form {
+}
+#search-form {
     display: none;
-  }
-
-  #buttonsearch {
-    padding-left: 7px;
-  }
+}
+#buttonsearch{
+   padding-left: 7px; 
+}
 </style>
 
 
@@ -140,43 +108,41 @@
 
 
 <a href="https://resulti.net/">
-  <img class="center" id="my-img" src="assets/icon.png" width="70" height="70" alt="https://resulti.net/"
-    title="Goooooooooooooooooo!" style="float:left;margin:20px 10px;" />
+  <img class="center" id="my-img"
+src="assets/icon.png" width="70" height="70" 
+alt="https://resulti.net/" title="Goooooooooooooooooo!" style="float:left;margin:20px 10px;" />
 </a>
-<br>
+  <br>
 <br>
 <br>
 <br>
 <center>
-  <form id="standard" method="get" action="/search.html">
-    <div class="input-group">
-      <input type="text" class="form-control" name="q" maxlength="150" id="search-bar"
-        placeholder="Search the web with Resulti...">
-      <button class="btn btn-info" type="submit" id="button-addon2">Go!</button>
-      <div class="btn-group">
-        <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          🔽
-        </button>
-        <ul class="dropdown-menu">
-<li><a class="dropdown-item" href="#" id="web-search">Web</a></li>
+ <form id="standard" method="get" action="/search.html">
+  <div class="input-group">
+    <button type="button" class="btn btn-info dropdown-toggle rounded" data-bs-toggle="dropdown" aria-expanded="false">
+      🔽
+    </button>
+    <input type="text" class="form-control rounded" name="q" maxlength="150" id="search-bar" placeholder="Search the web with Resulti...">
+    <button class="btn btn-info rounded" type="submit" id="button-addon2">Go!</button>
+  <div class="btn-group">
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#" id="web-search">Web</a></li>
     <li><a class="dropdown-item" href="#" id="image-search">Images</a></li>
     <li><a class="dropdown-item" href="#" id="video-search">Videos</a></li>
     <li><a class="dropdown-item" href="#" id="news-search">News</a></li>
-        </ul>
-      </div>
-    </div>
-  </form>
-</center>
-
-<form id="search-form" id="standard">
-  <div class="input-group">
-    <input type="text" id="query" class="form-control" id="search-bar" maxlength="150"
-      placeholder="Enter your search query">
-    <button class="btn btn-info" type="submit" id="submit" id="button-addon2">Search</button>
-
-
+  </ul>
+</div>
   </div>
 </form>
+
+</center>
+
+ <form id="search-form"  id="standard">
+   <div class="input-group">
+        <input type="text" id="query" class="form-control" id="search-bar" maxlength="150" placeholder="Enter your search query">
+        <button class="btn btn-info" type="submit" id="submit" id="button-addon2">Search</button>
+   </div>
+    </form>
  <script>
         // Function to perform image search
         function performImageSearch() {
@@ -249,163 +215,187 @@
 
 
     </script>
+
 <br>
 <br>
 <br>
 <br>
 <hr style="color:white">
 <br>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var resultsContainer = document.getElementById('results');
-    var textElement = resultsContainer.querySelector('p');
-    var originalText = textElement.textContent;
-    var wordsToDisplay = 10; // Définissez le nombre de mots à afficher
 
-    // Séparez le texte en mots
-    var words = originalText.split(' ');
-
-    // Limitez le nombre de mots
-    var truncatedText = words.slice(0, wordsToDisplay).join(' ');
-
-    // Mettez à jour le texte dans l'élément
-    textElement.textContent = truncatedText;
-  });
-</script>
-<div id="results" class="max-w-prose">
-  <script>
-    const form = document.getElementById('search-form');
-    const queryInput = document.getElementById('query');
-    const resultsDiv = document.getElementById('results');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const query = queryInput.value.trim();
-      const apiUrl = `https://resultiimagebackend.jacobi090.repl.co/search?q=${encodeURIComponent(query)}`;
-
-      try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        displayResults(data);
-        boldText(query);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        results.innerHTML = '<p>An error occurred while fetching results.</p>';
-      }
-    });
-
-    function displayResults(data) {
-      resultsDiv.innerHTML = '';
-
-      if (data && data.results && data.results.length > 0) {
-        data.results.forEach((result) => {
-          const resultDiv = document.createElement('div');
-          resultDiv.classList.add('results');
-          resultDiv.innerHTML = `
-                  <img src="${result.thumbnail.src}" alt="${result.title}" style="max-width: 100%;">
-                  <p style="margin-bottom: 0; margin-top: 4px;"><a href="${result.url}" target="_blank" style="color: #8ab4f8;">${result.title}</a></p>
-              `;
-          resultsDiv.appendChild(resultDiv);
-        });
-      } else {
-        resultsDiv.innerHTML = '<p>No results found.</p>';
-      }
-    }
-
-    function boldText(queryString) {
-      let links = document.querySelectorAll("#results .result-item p a");
-
-      function escapeRegExp(string) {
-        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      }
-
-      links.forEach(function (link) {
-        let linkText = link.textContent;
-
-        queryString.split(" ").forEach(function (keyword) {
-          let regex = new RegExp("\\b" + escapeRegExp(keyword) + "\\b", "gi");
-
-          linkText = linkText.replace(regex, function (match) {
-            return "<strong>" + match + "</strong>";
-          });
-        });
-
-        link.innerHTML = linkText;
-      });
-    }
-
-    function getUrlParameter(sParam) {
-      var sPageURL = window.location.search.substring(1);
-      var sURLVariables = sPageURL.split('&');
-      for (var i = 0; i < sURLVariables.length; i++) {
-        var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam) {
-          return sParameterName[1];
-        }
-      }
-    }
-
-    if (getUrlParameter('q') !== undefined && getUrlParameter('q') !== '') {
-      document.title = 'Pepsearch Images - ' + getUrlParameter('q');
-      document.getElementById('query').value = getUrlParameter('q');
-      document.getElementById('submit').click();
-    }
-
-    document.getElementById('submit').addEventListener('click', function () {
-      window.history.pushState("", "Image Search", `/?q=${document.getElementById('query').value}`);
-    });
-  </script>
-</div>
-<a href="//www.dmca.com/Protection/Status.aspx?id=d0017b07-d117-4bb9-a005-a30c9e4a9abd"
-  title="DMCA.com Protection Status" class="dmca-badge"> <img
-    src="//images.dmca.com/Badges/dmca-badge-w100-5x1-10.png?ID=//www.dmca.com/Protection/Status.aspx?id=d0017b07-d117-4bb9-a005-a30c9e4a9abd"
-    alt="DMCA.com Protection Status"></a>
-<script src="//images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
-<p style="color:white">We, Resulti and ClaytonTDM (the owner of the code and member of the Forjed Team), have accepted
-  that THE CODE FOR RESULTS can be used in Resulti.</p>
+ <div id="results" class="max-w-prose">
+    </div>
+<a href="//www.dmca.com/Protection/Status.aspx?id=d0017b07-d117-4bb9-a005-a30c9e4a9abd" title="DMCA.com Protection Status" class="dmca-badge"> <img src="//images.dmca.com/Badges/dmca-badge-w100-5x1-10.png?ID=//www.dmca.com/Protection/Status.aspx?id=d0017b07-d117-4bb9-a005-a30c9e4a9abd" alt="DMCA.com Protection Status"></a> <script src="//images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+<p style="color:white">We, Resulti and ClaytonTDM (the owner of the code and member of the Forjed Team), have accepted that THE CODE FOR RESULTS can be used in Resulti.</p>
 // Credit to ClaytonTDM for the API
+    <script>
+        const form = document.getElementById('search-form');
+        const queryInput = document.getElementById('query');
+        const resultsDiv = document.getElementById('results');
 
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const query = queryInput.value.trim();
 
+            // Replace '<YOUR_API_KEY>' with your actual API key
+            //const apiKey = 'API_KEY';
+
+            // Make a request to the Brave Search API
+            const apiUrl = `https://resultiimagebackend.jacobi090.repl.co/search?q=${encodeURIComponent(query)}`;
+            // const originalUrl = 'https://api.search.brave.com/res/v1/web/search?q=cool%20rocks';
+            //const apiUrl = 'https://corsproxy.io/?' + encodeURIComponent(badApiUrl);
+            //const headers = {
+            //    'Accept': 'application/json',
+            //    'Accept-Encoding': 'gzip',
+            //    'X-Subscription-Token': apiKey
+            //};
+
+            try {
+                const response = await fetch(apiUrl/*, { headers }*/);
+                const data = await response.json();
+                boldText(query);
+                displayResults(data);
+
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                resultsDiv.innerHTML = '<p>An error occurred while fetching results.</p>';
+            }
+        });
+
+        function displayResults(data) {
+    // Clear previous results
+    resultsDiv.innerHTML = '';
+
+    if (data.web && data.web.results && data.web.results.length > 0) {
+        data.web.results.forEach((result) => {
+            const resultDiv = document.createElement('div');
+            resultDiv.classList.add('result-item');
+            resultDiv.innerHTML = `
+                <code style="color: #eee; font-size: 16px;"><img src="${result.meta_url.favicon}" width="16" style="margin-right: 5px; margin-bottom: -2px;">${result.meta_url.hostname} ${result.meta_url.path}</code>
+                <p style="margin-bottom: 0; margin-top: 4px;"><a href="${result.url}" target="_blank" style="color: #8ab4f8;">${result.title}</a></p>
+                <p style="margin-top: 5px; color: #ccc;">${result.description}</p>
+    <br>
+            `;
+            resultsDiv.appendChild(resultDiv);
+        });
+    } else {
+        resultsDiv.innerHTML = '<p>No results found.</p>';
+    }
+}
+
+function boldText(queryString) {
+// Get all <a> elements within the <div id="results">
+let links = document.querySelectorAll("#results .result-item p a");
+
+// Function to escape special characters in a string for RegExp
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Loop through each <a> element
+links.forEach(function(link) {
+  // Get the text content of the link
+  let linkText = link.textContent;
+
+  // Loop through each word in the query
+  queryString.split(" ").forEach(function(keyword) {
+    // Create a regular expression to match the whole word, case-insensitive
+    let regex = new RegExp("\\b" + escapeRegExp(keyword) + "\\b", "gi");
+
+    // Replace all occurrences of the matched keyword with the <strong> element
+    linkText = linkText.replace(regex, function(match) {
+      return "<strong>" + match + "</strong>";
+    });
+  });
+
+  // Update the link's HTML with the bolded text
+  link.innerHTML = linkText;
+});
+}
+
+        </script> <!-- now all that needs to be done is styling the site to be resulti -->
 <style>
-  #standard {
-    display: flex;
-    justify-content: space-between;
-    max-width: 500px;
-    margin: -60 auto;
-  }
+#standard {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: -60  auto;
+  border-radius: 10px;
+}
 
-  #animated-2 {
-    width: 80%;
-  }
+#animated-2 {
+  width: 80%;
+}
 
-  input[type="submit"] {
-    width: 18%;
-  }
+input[type="submit"] {
+  width: 18%;
+}
 </style>
 
 
 <style>
-  @import url('https://fonts.cdnfonts.com/css/lato?styles=17382');
+@import url('https://fonts.cdnfonts.com/css/lato?styles=17382');
 </style>
 <div class="d-flex justify-content-center">
   <div class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
 </div>
+<script>
+const queryString = window.location.search;
+$(window).scroll(function (e) {
+  var $el = $('.fixedElement');
+  var isPositionFixed = ($el.css('position') == 'fixed');
+  if ($(this).scrollTop() > 200 && !isPositionFixed) {
+    $el.css({ 'position': 'fixed', 'top': '0px' });
+  }
+  if ($(this).scrollTop() < 200 && isPositionFixed) {
+    $el.css({ 'position': 'static', 'top': '0px' });
+  }
+});
+  </script>
+<script>
+if (window.matchMedia("(min-width: 937px)").matches) {
+  console.log('Device: Desktop')
+  setTimeout(function(){$(".gs-snippet").wrap("<div style='width: 40%;'></div>")},1000);
+} else {
+  console.log('Device: Mobile');
+  document.getElementById('resultsbox').classList.remove("paddingbox");
+  document.getElementById('formcontrol').innerHTML = `<form id="standard" method="get" action="/search.html">
+  <div id="animated-2" class="form-group">
+    <input type="text" class="form-control" name="q" maxlength="150" id="search-bar" placeholder="Search the web with Resulti...">
+  </div>
+  <input type="submit" value="search" class="btn btn-primary">
+</form>`;
+  document.getElementById('searchbox').value = qfc;
 
+}		
+</script>
+<script>
+<script>
+    document.getElementById('search-form').addEventListener('submit', function (event) {
+        var query = document.getElementById('query').value;
+        var encodedQuery = encodeURIComponent(query);
+        this.action = '/search?q=' + encodedQuery;
+        // Vous pouvez également ajouter d'autres paramètres à votre URL ici si nécessaire.
+    });
+</script>
+
+
+</script>
 <style>
-  @media only screen and (max-width: 975px) {
-    form#standard {
-      text-align: center;
+@media only screen and (max-width: 975px) {
+  form#standard {
+    text-align: center;
 
 
 
-    }
   }
+}
+input[type="submit"] {
+  width: -20%;
+}
 
-  input[type="submit"] {
-    width: -20%;
-  }
 </style>
 
 
@@ -413,16 +403,16 @@
 
 
 <style>
-  body::-webkit-scrollbar,
-  body scrollbar {
+body::-webkit-scrollbar,
+body scrollbar {
     width: 0.2em;
     background-color: #003399;
-  }
+}
 
-  body::-webkit-scrollbar-thumb,
-  body scrollbar thumb {
-    background-color: #b3b3b3;
-  }
+body::-webkit-scrollbar-thumb,
+body scrollbar thumb {
+  background-color: #b3b3b3;
+}
 </style>
 
 
@@ -434,60 +424,76 @@
     }
   }
 </style>
+<script>
+  if (window.innerWidth <= 767) {
+    document.getElementById("animated-2").classList.add("centeredForm");
+  }
+
+  var style = document.createElement("style");
+  style.innerHTML = `
+    .CenterForm {
+      display: flex;
+      justify-content: center;
+    }
+  `;
+  document.head.appendChild(style);
+</script>
 
 <style>
-  #standard {
-    margin-left: 70px;
-  }
-</style>
+#standard {
+  margin-left: 70px;
+}
+  </style>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<script src="https://go.statuspage.io/embed/script.js"></script>
 
+
+<script src="https://go.statuspage.io/embed/script.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 <br>
 <br>
 <br>
 <br>
-<center>
-  <form id="standard" method="get" action="/search.html">
-    <div class="input-group">
-      <input type="text" class="form-control" name="q" maxlength="150" id="search-bar"
-        placeholder="Search the web with Resulti...">
-      <button class="btn btn-info" type="submit" id="button-addon2">Go!</button>
-    </div>
-  </form>
-</center>
-   <script>
-  function getUrlParameter(sParam) {
-  var sPageURL = window.location.search.substring(1);
-  var sURLVariables = sPageURL.split('&');
-  for (var i = 0; i < sURLVariables.length; i++) {
-  var sParameterName = sURLVariables[i].split('=');
-  if (sParameterName[0] == sParam) {
-  return sParameterName[1];
-  }
-  }
-  }
-  var q = getUrlParameter('q');
-  const qf = q.replaceAll('+', '%20');
-  const qfc = decodeURIComponent(qf);
-  document.getElementById('search-bar').value = qfc;
-  window.addEventListener('popstate', function (event) {
-  q = getUrlParameter('q');
-  qf = q.replaceAll('+', '%20');
-  qfc = decodeURIComponent(qf);
-  document.getElementById('search-bar').value = qfc;
-  });
-  document.title = qfc + " - Resulti Search";
+ <center>
+<form id="standard" method="get" action="/search.html">
+  <div class="input-group">
+    <input type="text" class="form-control" name="q" maxlength="150" id="search-bar" placeholder="Search the web with Resulti...">
+    <button class="btn btn-info" type="submit" id="button-addon2">Go!</button>
+  </div>
+</form>
+  </center>
 
-  $(".search-txt-input").keydown(function (e) {
-  if (e.keyCode == 13 && !e.shiftKey) {
-  e.preventDefault();
-  document.getElementById("standard").submit();
-  return false;
-  }
-  });
-    </script>
+  <script>
+function getUrlParameter(sParam) {
+var sPageURL = window.location.search.substring(1);
+var sURLVariables = sPageURL.split('&');
+for (var i = 0; i < sURLVariables.length; i++) {
+var sParameterName = sURLVariables[i].split('=');
+if (sParameterName[0] == sParam) {
+return sParameterName[1];
+}
+}
+}
+var q = getUrlParameter('q');
+const qf = q.replaceAll('+', '%20');
+const qfc = decodeURIComponent(qf);
+document.getElementById('search-bar').value = qfc;
+window.addEventListener('popstate', function (event) {
+q = getUrlParameter('q');
+qf = q.replaceAll('+', '%20');
+qfc = decodeURIComponent(qf);
+document.getElementById('search-bar').value = qfc;
+});
+document.title = qfc + " - Resulti Search";
+
+$(".search-txt-input").keydown(function (e) {
+if (e.keyCode == 13 && !e.shiftKey) {
+e.preventDefault();
+document.getElementById("standard").submit();
+return false;
+}
+});
+  </script>
 <html>
